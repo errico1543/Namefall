@@ -51,6 +51,17 @@ body {
     border-radius: 25px;
 }
 
+#image-preview {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    max-height: 350px;
+    height: auto;
+    object-fit: contain;
+    margin: 20px auto;
+    border: 2px solid currentColor;
+    border-radius: 5px;
+}
 
 
 
