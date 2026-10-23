@@ -141,21 +141,21 @@ let sobrenomes = [
     "Quintela", "Siqueira", "Teles", "Vilar", "Zambrano"
 ];
 const ameacas = [
-    "NEGLIGIBLE",
-    "LOW",
-    "MODERATE",
-    "HIGH",
-    "SEVERE",
-    "CATASTROPHIC",
-    "EXISTENTIAL"
+    "NEGLIGÍVEL.",
+    "BAIXO.",
+    "MODERADO.",
+    "ALTO.",
+    "SEVERO.",
+    "CATASTRÓFICO.",
+    "EXISTENCIAL."
 ];
 const contencoes = [
-    "UNRESTRICTED",
-    "STANDARD",
-    "MODERATE",
-    "HIGH-SECURITY",
-    "EXTREME",
-    "IMPOSSIBLE"
+    "NÃO NECESSÁRIO.",
+    "COMUM.",
+    "MODERADO.",
+    "SEGURÃNÇA MÁXIMA.",
+    "EXTREMO.",
+    "IMPOSSÍVEL."
 ];
 
 function sortear(lista) {
