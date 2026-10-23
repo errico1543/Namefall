@@ -205,6 +205,7 @@ botaoGerar.addEventListener("click", () => {
     const nomeCompleto = `${sortear(nomes)} ${sortear(sobrenomes)}`;
 
     nomeElemento.textContent = gerarIdentidade();
+    tituloElemento.textContent = sortear(titulos);
 
     ameacaElemento.textContent = sortear(ameacas);
     contencaoElemento.textContent = sortear(contencoes);
