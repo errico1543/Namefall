@@ -157,6 +157,28 @@ const contencoes = [
     "EXTREMO.",
     "IMPOSSÍVEL."
 ];
+let nomesSimbolicos = [
+    "Fósforo da Perdição",
+    "O Último Suspiro",
+    "Vácuo Absoluto",
+    "Cinzas do Amanhã",
+    "Arauto do Fim",
+    "Erro Fundamental",
+    "Aquele que Observa",
+    "Ruína Prematura",
+    "Fragmento de Deus",
+    "O Inquilino do Nada",
+    "Déficit Existencial",
+    "Santo dos Condenados",
+    "Ponto Sem Retorno",
+    "A Última Testemunha",
+    "Silêncio Terminal",
+    "O Desvio Original",
+    "Princípio da Catástrofe",
+    "Luto Cósmico",
+    "O Fim da Linha",
+    "Resíduo da Criação"
+];
 
 function sortear(lista) {
     const indice = Math.floor(Math.random() * lista.length);
@@ -170,11 +192,19 @@ const contencaoElemento = document.querySelector("#containment-level");
 
 const botaoGerar = document.querySelector("#generate-report");
 
+function gerarIdentidade() {
+    const simbolico = Math.random() < 0.5;
+
+    if (simbolico) {
+        return sortear(nomesSimbolicos);
+    }
+
+    return `${sortear(nomes)} ${sortear(sobrenomes)}`;
+}
 botaoGerar.addEventListener("click", () => {
     const nomeCompleto = `${sortear(nomes)} ${sortear(sobrenomes)}`;
 
-    nomeElemento.textContent = nomeCompleto;
-    tituloElemento.textContent = sortear(titulos);
+    nomeElemento.textContent = gerarIdentidade();
 
     ameacaElemento.textContent = sortear(ameacas);
     contencaoElemento.textContent = sortear(contencoes);
