@@ -339,7 +339,44 @@ botaoGerar.addEventListener("click", () => {
     };
     HEIGHTElement.textContent = `${altura}cm (${(altura / 100).toLocaleString("pt-BR")} Metros.)`;
     AGEElement.textContent = idade.toLocaleString("pt-BR") + " Anos.";
+    marcarEntidade();
 });
+
+
+
+
+
+const mapa = document.querySelector("#world-map");
+const mapaOriginal = mapa.textContent;
+
+function marcarEntidade() {
+    const caracteres = [...mapaOriginal];
+
+    // Encontrar todas as posições que possuem #
+    const posicoes = [];
+
+    caracteres.forEach((caractere, indice) => {
+        if (["#", "%", "@"].includes(caractere)) {
+            posicoes.push(indice);
+        }
+    });
+
+    // Sortear uma posição válida
+    const posicao = posicoes[Math.floor(Math.random() * posicoes.length)];
+
+    // Criar o X vermelho
+    const marcador = document.createElement("span");
+    marcador.textContent = "X";
+    marcador.style.color = "red";
+    marcador.style.fontWeight = "bold";
+
+    // Reconstruir o mapa preservando os caracteres
+    mapa.replaceChildren(
+        document.createTextNode(caracteres.slice(0, posicao).join("")),
+        marcador,
+        document.createTextNode(caracteres.slice(posicao + 1).join(""))
+    );
+}
 
 
 
