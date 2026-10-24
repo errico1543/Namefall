@@ -8,6 +8,7 @@ const DEFElement = document.querySelector("#DEFElement");
 const HPElement = document.querySelector("#HPElement");
 const AGEElement = document.querySelector("#AGEElement");
 const HEIGHTElement = document.querySelector("#HEIGHTElement");
+const PERSONElement = document.querySelector("#PERSONElement");
 
 imageinput.addEventListener("change", () => {
     const arquivo = imageinput.files[0];
@@ -268,6 +269,97 @@ let origens = [
     "foi encontrado em uma estação de energia abandonada carregando baterias que não possuíam terminais",
     "foi encontrado em uma fábrica de relógios ajustando todos os ponteiros para horários diferentes"
 ];
+let personalidades = [
+    // Positivas
+    "Gentil",
+    "Corajoso",
+    "Leal",
+    "Paciente",
+    "Honesto",
+    "Generoso",
+    "Empático",
+    "Otimista",
+    "Determinado",
+    "Altruísta",
+    "Carismático",
+    "Responsável",
+    "Compreensivo",
+    "Diplomático",
+    "Protetor",
+    "Perseverante",
+    "Curioso",
+    "Criativo",
+    "Justo",
+    "Confiável",
+
+    // Neutras
+    "Introvertido",
+    "Extrovertido",
+    "Reservado",
+    "Sarcástico",
+    "Pragmático",
+    "Contemplativo",
+    "Cético",
+    "Impulsivo",
+    "Descontraído",
+    "Competitivo",
+    "Independente",
+    "Excêntrico",
+    "Misterioso",
+    "Teimoso",
+    "Distraído",
+    "Perfeccionista",
+    "Idealista",
+    "Prudente",
+    "Tagarela",
+    "Observador",
+
+    // Negativas
+    "Arrogante",
+    "Egoísta",
+    "Manipulador",
+    "Vingativo",
+    "Invejoso",
+    "Preguiçoso",
+    "Covarde",
+    "Desonesto",
+    "Cruel",
+    "Autoritário",
+    "Rancoroso",
+    "Impaciente",
+    "Desconfiado",
+    "Vaidoso",
+    "Ganancioso",
+    "Pessimista",
+    "Insensível",
+    "Controlador",
+    "Ressentido",
+    "Prepotente",
+
+    // Peculiares
+    "Dramático",
+    "Desastrado",
+    "Excitável",
+    "Sonhador",
+    "Paranoico",
+    "Disciplinado",
+    "Supersticioso",
+    "Melancólico",
+    "Ingênuo",
+    "Enigmático",
+    "Obcecado",
+    "Nostálgico",
+    "Excêntrico",
+    "Sentimental",
+    "Desapegado",
+    "Masoquista emocional",
+    "Indecifrável",
+    "Excessivamente literal",
+    "Atrapalhado socialmente",
+    "Caoticamente imprevisível"
+];
+
+
 function sortear(lista) {
     const indice = Math.floor(Math.random() * lista.length);
     return lista[indice];
@@ -323,6 +415,7 @@ botaoGerar.addEventListener("click", () => {
     ATKElement.textContent = atributos.ATK;
     DEFElement.textContent = atributos.DEF;
     HPElement.textContent = atributos.HP;
+    PERSONElement.textContent = sortear(personalidades);
 
     let altura;
     if (chance(10)) {
